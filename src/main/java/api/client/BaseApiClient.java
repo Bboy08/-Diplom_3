@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.given;
 
 public class BaseApiClient {
+    public final static String BASE_URL = "https://stellarburgers.nomoreparties.site";
     public RequestSpecification getPostSpec(){
         return given()
                 .filter(new ResponseLoggingFilter())

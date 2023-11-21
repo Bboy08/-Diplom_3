@@ -12,21 +12,21 @@ public class UserApiClient extends BaseApiClient{
         return getPostSpec()
                 .body(createUserRequest)
                 .when()
-                .post("https://stellarburgers.nomoreparties.site/api/auth/register");
+                .post(BASE_URL + "/api/auth/register");
     }
     @Step("Удалить пользователя")
     public Response deleteUser(String accessToken) {
         return getPostSpec()
                 .when()
                 .auth().oauth2(accessToken)
-                .delete("https://stellarburgers.nomoreparties.site/api/auth/user");
+                .delete(BASE_URL + "/api/auth/user");
     }
     @Step("Залогиниться")
     public Response loginUser(CreateUserRequest createUserRequest) {
         return getPostSpec()
                 .body(createUserRequest)
                 .when()
-                .post("https://stellarburgers.nomoreparties.site/api/auth/login");
+                .post(BASE_URL + "/api/auth/login");
     }
 
 }

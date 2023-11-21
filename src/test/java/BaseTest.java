@@ -15,9 +15,8 @@ public class BaseTest {
 
     @Before
     public void before() {
-        String chromeBrowser = "chrome";
-        String yandexBrowser = "yandex";
-        driver = WebDriverFactory.get(chromeBrowser);
+        String browserName = System.getProperty("browserName");
+        driver = WebDriverFactory.get(browserName);
         createUserRequest = getRandomUser();
         createUserRequestWithInvalidPassword = getRandomUserWithInvalidPass();
         userApiClient = new UserApiClient();
